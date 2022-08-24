@@ -21,7 +21,7 @@ $this->headTitle($title);
             <td><?= $this->escapeHtml($album->artist) ?></td>
             <td>
                 <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>" class="badge badge-warning">Edit</a>
-                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>" class="badge badge-danger">Delete</a>
+                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>" class="badge badge-danger">Hapus</a>
             </td>
         </tr>
     <?php endforeach; ?>

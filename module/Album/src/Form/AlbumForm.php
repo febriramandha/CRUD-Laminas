@@ -19,7 +19,7 @@ class AlbumForm extends Form
             'name' => 'title',
             'type' => 'text',
             'options' => [
-                'label' => 'Title',
+                'label' => 'Judul',
             ],
         ]);
         $this->add([
