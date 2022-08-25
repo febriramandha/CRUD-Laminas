@@ -63,10 +63,10 @@ return [
                     ],
                 ],
             ],
-            // [
-            //     'label' => 'Blog',
-            //     'route' => 'blog',
-            // ],
+            [
+                'label' => 'Blog',
+                'route' => 'blog',
+            ],
         ],
     ],
 
