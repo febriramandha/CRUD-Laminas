@@ -48,17 +48,27 @@
                             Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?= $this->url('application') ?>">
-                            About <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="collapse navbar-collapse">
+        <?php // update to: 
+        ?>
+        <?= $this->navigation('navigation')
+            ->menu()
+            ->setMinDepth(0)
+            ->setMaxDepth(0)
+            ->setUlClass('nav navbar-nav') ?>
+    </div>
+
     <div class="container">
+        <?= $this->navigation('navigation')
+            ->breadcrumbs()
+            ->setMinDepth(0)
+            ->setPartial('partial/breadcrumb') ?>
+
         <?= $this->content ?>
     </div>
 

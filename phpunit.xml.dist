@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true">
+<!-- <phpunit colors="true">
     <testsuites>
         <testsuite name="Laminas MVC Skeleton Test Suite">
             <directory>./module/Application/test</directory>
@@ -10,4 +10,15 @@
             <directory suffix=".php">./module/*/src</directory>
         </whitelist>
     </filter>
+</phpunit> -->
+
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="Laminas MVC Application Test Suite">
+            <directory>./module/Application/test</directory>
+        </testsuite>
+        <testsuite name="Album">
+            <directory>./module/Album/test</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>

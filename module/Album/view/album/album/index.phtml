@@ -11,12 +11,15 @@ $this->headTitle($title);
 
 <table class="table table-hover table-bordered">
     <tr class="thead-dark">
+        <th>#</th>
         <th>Title</th>
         <th>Artist</th>
         <th>Aksi</th>
     </tr>
-    <?php foreach ($album as $album) : ?>
+    <?php $i = 1; ?>
+    <?php foreach ($this->paginator as $album) : ?>
         <tr>
+            <td align="center" width="10"><?= $this->escapeHtml($i) ?></td>
             <td><?= $this->escapeHtml($album->title) ?></td>
             <td><?= $this->escapeHtml($album->artist) ?></td>
             <td>
@@ -24,5 +27,16 @@ $this->headTitle($title);
                 <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>" class="badge badge-danger">Hapus</a>
             </td>
         </tr>
+        <?php $i++; ?>
     <?php endforeach; ?>
 </table>
+<?= $this->paginationControl(
+    // The paginator object:
+    $this->paginator,
+    // The scrolling style:
+    'sliding',
+    // The partial to use to render the control:
+    'partial/paginator',
+    // The route to link to when a user clicks a control link:
+    ['route' => 'album']
+) ?>
