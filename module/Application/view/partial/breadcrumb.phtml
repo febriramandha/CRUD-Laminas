@@ -1,5 +1,3 @@
-<?php // in module/Application/view/partial/breadcrumb.phtml: 
-?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <?php
@@ -10,7 +8,7 @@
             if ($key < count($this->pages) - 1) :
             ?>
                 <li class="breadcrumb-item">
-                    <a href="<?= $page->getHref() ?>">
+                    <a style="text-decoration:none" href="<?= $page->getHref() ?>">
                         <?= $page->getLabel() ?>
                     </a>
                 </li>
