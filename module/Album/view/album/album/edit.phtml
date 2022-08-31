@@ -15,7 +15,7 @@ $artist->setAttribute('class', 'form-control');
 $artist->setAttribute('placeholder', 'Artist');
 
 $submit = $form->get('submit');
-$submit->setAttribute('class', 'btn btn-primary');
+$submit->setAttribute('class', 'btn btn-primary mb-5');
 
 $form->setAttribute('action', $this->url('album', [
     'action' => 'edit',

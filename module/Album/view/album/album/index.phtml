@@ -12,7 +12,7 @@ $this->headTitle($title);
 <table class="table table-hover table-bordered table-head-bg-info table-bordered-bd-info mt-4">
     <tr class="bg-primary text-white">
         <th>#</th>
-        <th>Title</th>
+        <th>Judul</th>
         <th>Artist</th>
         <th>Aksi</th>
     </tr>
@@ -23,28 +23,30 @@ $this->headTitle($title);
             <td><?= $this->escapeHtml($album->title) ?></td>
             <td><?= $this->escapeHtml($album->artist) ?></td>
             <td>
-                <a style="text-decoration:none" href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">
-                    <button type="button" class="btn btn-icon btn-round btn-warning">
+                <a style="text-decoration:none" href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>" class="badge badge-warning">Edit
+                    <!-- <button type="button" class="btn btn-icon btn-round btn-warning">
                         <i class="fa fa-pencil-alt"></i>
-                    </button>
+                    </button> -->
                 </a>
-                <a style="text-decoration:none" href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>">
-                    <button type="button" class="btn btn-icon btn-round btn-danger">
+                <a style="text-decoration:none" href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>" class="badge badge-danger">Hapus
+                    <!-- <button type="button" class="btn btn-icon btn-round btn-danger">
                         <i class="fa fa-trash-alt"></i>
-                    </button>
+                    </button> -->
                 </a>
             </td>
         </tr>
         <?php $i++; ?>
     <?php endforeach; ?>
 </table>
-<?= $this->paginationControl(
-    // The paginator object:
-    $this->paginator,
-    // The scrolling style:
-    'sliding',
-    // The partial to use to render the control:
-    'partial/paginator',
-    // The route to link to when a user clicks a control link:
-    ['route' => 'album']
-) ?>
+<div class="mb-5">
+    <?= $this->paginationControl(
+        // The paginator object:
+        $this->paginator,
+        // The scrolling style:
+        'sliding',
+        // The partial to use to render the control:
+        'partial/paginator',
+        // The route to link to when a user clicks a control link:
+        ['route' => 'album']
+    ) ?>
+</div>

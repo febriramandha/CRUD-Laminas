@@ -40,10 +40,12 @@ return [
         'default' => [
             [
                 'label' => 'Home',
+                'class' => 'nav-link',
                 'route' => 'home',
             ],
             [
                 'label' => 'Album',
+                'class' => 'nav-link',
                 'route' => 'album',
                 'pages' => [
                     [
@@ -65,7 +67,30 @@ return [
             ],
             [
                 'label' => 'Blog',
+                'class' => 'nav-link',
                 'route' => 'blog',
+                'pages' => [
+                    [
+                        'label'  => 'Detail',
+                        'route'  => 'blog/detail',
+                        'action' => 'detail',
+                    ],
+                    [
+                        'label'  => 'Add',
+                        'route'  => 'blog/add',
+                        'action' => 'add',
+                    ],
+                    [
+                        'label'  => 'Edit',
+                        'route'  => 'blog/edit',
+                        'action' => 'edit',
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'blog/delete',
+                        'action' => 'delete',
+                    ],
+                ],
             ],
         ],
     ],

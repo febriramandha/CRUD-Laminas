@@ -1,0 +1,13 @@
+<?php
+$title = 'Post Details';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<dl class="mb-5">
+    <dt>Post Title</dt>
+    <dd><?= $this->escapeHtml($this->post->getTitle()) ?></dd>
+
+    <dt>Post Text</dt>
+    <dd><?= $this->escapeHtml($this->post->getText()) ?></dd>
+</dl>

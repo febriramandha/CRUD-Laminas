@@ -1,0 +1,18 @@
+<?php
+$title = 'Delete post';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>Are you sure you want to delete the following post?</p>
+
+<ul class="list-group">
+    <li class="list-group-item"><?= $this->escapeHtml($this->post->getTitle()) ?></li>
+</ul>
+
+<form action="<?php $this->url('blog/delete', [], true) ?>" method="post" class="mb-5">
+    <input type="hidden" name="id" value="<?= $this->escapeHtmlAttr($this->post->getId()) ?>" />
+    <br>
+    <input class="btn btn-warning" type="submit" name="confirm" value="Cancel" />
+    <input class="btn btn-danger" type="submit" name="confirm" value="Delete" />
+</form>
