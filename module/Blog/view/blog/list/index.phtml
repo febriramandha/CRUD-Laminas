@@ -4,6 +4,11 @@ $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
 
+<?= $this->flashMessenger()
+    ->setMessageOpenFormat('<div class="alert alert-success">')
+    ->setMessageCloseString('</div>')
+    ->render(); ?>
+
 <div class="btn-group mb-3" role="group" aria-label="Post actions">
     <a class="btn btn-primary" href="<?= $this->url('blog/add') ?>">Write new post</a>
 </div>
@@ -12,7 +17,7 @@ $this->headTitle($title);
     <?php foreach ($this->posts as $post) : ?>
         <div class="list-group-item">
             <h4 class="list-group-item-heading">
-                <a href="<?= $this->url('blog/detail', ['id' => $post->getId()]) ?>" style="text-decoration: none;">
+                <a href="<?= $this->url('blog/detail', ['id' => $post->getId()]) ?>" style="text-decoration: none;" title="Klik untuk detail...">
                     <?= $post->getTitle() ?>
                 </a>
             </h4>

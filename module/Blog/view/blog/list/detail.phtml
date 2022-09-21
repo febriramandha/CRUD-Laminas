@@ -4,8 +4,13 @@ $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
 
+<?= $this->flashMessenger()
+    ->setMessageOpenFormat('<div class="alert alert-success">')
+    ->setMessageCloseString('</div>')
+    ->render(); ?>
+
 <dl class="mb-5">
-    <dt>Post Title</dt>
+    <dt>Judul Post</dt>
     <dd><?= $this->escapeHtml($this->post->getTitle()) ?></dd>
 
     <dt>Post Text</dt>

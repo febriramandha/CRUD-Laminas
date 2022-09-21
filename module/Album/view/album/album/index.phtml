@@ -4,7 +4,6 @@ $title = 'My Albums';
 $this->headTitle($title);
 ?>
 
-
 <h1><?= $this->escapeHtml($title) ?></h1>
 <?= $this->flashMessenger()
     ->setMessageOpenFormat('<div class="alert alert-success">')
@@ -35,9 +34,6 @@ $this->headTitle($title);
                     </button> -->
                 </a>
                 <a style="text-decoration:none" href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>" class="badge badge-danger">Hapus
-                    <!-- <button type="button" class="btn btn-icon btn-round btn-danger">
-                        <i class="fa fa-trash-alt"></i>
-                    </button> -->
                 </a>
             </td>
         </tr>

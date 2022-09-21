@@ -64,6 +64,11 @@ class WriteController extends AbstractActionController
             throw $ex;
         }
 
+        // Add success message
+        $this->flashMessenger()->addMessage(
+            'Data Album Berhasil Ditambahkan!'
+        );
+
         return $this->redirect()->toRoute(
             'blog/detail',
             ['id' => $post->getId()]
@@ -96,6 +101,11 @@ class WriteController extends AbstractActionController
         if (!$this->form->isValid()) {
             return $viewModel;
         }
+
+        // Add success message
+        $this->flashMessenger()->addMessage(
+            'Data Album Berhasil Diubah!'
+        );
 
         $post = $this->command->updatePost($post);
         return $this->redirect()->toRoute(

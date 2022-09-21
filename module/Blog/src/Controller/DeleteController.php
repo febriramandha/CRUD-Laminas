@@ -59,6 +59,12 @@ class DeleteController extends AbstractActionController
         }
 
         $post = $this->command->deletePost($post);
+
+        // Add success message
+        $this->flashMessenger()->addMessage(
+            'Data Album Berhasil Dihapus!'
+        );
+
         return $this->redirect()->toRoute('blog');
     }
 }
