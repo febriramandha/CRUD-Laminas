@@ -17,8 +17,8 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        // 'controller' => AlbumController::class, // <-- change here
+                        'controller' => Controller\IndexController::class, // Route Default
+                        // 'controller' => AlbumController::class, // <-- Aktifkan jika ingin route default
                         'action'     => 'index',
                     ],
                 ],

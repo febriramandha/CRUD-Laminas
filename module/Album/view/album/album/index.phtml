@@ -1,10 +1,16 @@
 <?php
 // module/Album/view/album/album/index.phtml:
-
 $title = 'My Albums';
 $this->headTitle($title);
 ?>
+
+
 <h1><?= $this->escapeHtml($title) ?></h1>
+<?= $this->flashMessenger()
+    ->setMessageOpenFormat('<div class="alert alert-success">')
+    ->setMessageCloseString('</div>')
+    ->render(); ?>
+
 <p>
     <a href="<?= $this->url('album', ['action' => 'add']) ?>" class="btn btn-primary">Tambah Album</a>
 </p>

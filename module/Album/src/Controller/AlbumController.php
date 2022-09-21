@@ -59,6 +59,12 @@ class AlbumController extends AbstractActionController
 
         $album->exchangeArray($form->getData());
         $this->table->saveAlbum($album);
+
+        // Add success message
+        $this->flashMessenger()->addMessage(
+            'Data Album Baru Berhasil Ditambah!'
+        );
+
         return $this->redirect()->toRoute('album');
     }
 
@@ -102,6 +108,10 @@ class AlbumController extends AbstractActionController
         } catch (\Exception $e) {
         }
 
+        // Add success message
+        $this->flashMessenger()->addMessage(
+            'Data Album Berhasil Diubah!'
+        );
         // Redirect to album list
         return $this->redirect()->toRoute('album', ['action' => 'index']);
     }
@@ -121,6 +131,11 @@ class AlbumController extends AbstractActionController
                 $id = (int) $request->getPost('id');
                 $this->table->deleteAlbum($id);
             }
+
+            // Add success message
+            $this->flashMessenger()->addMessage(
+                'Data Album Berhasil Dihapus!'
+            );
 
             // Redirect to list of albums
             return $this->redirect()->toRoute('album');
